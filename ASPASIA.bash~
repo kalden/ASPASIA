@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# SETTINGS FILE LOCATION TAKEN FROM ARGUMENTS
+# FIRST ARG SHOULD BE THE ANALYSIS BEING RUN (-rle) AND THE SECOND THE PATH TO THE SETTINGS XML FILE
+SETTINGS=$2
+
+# Potential flags r for robustness, l for latin-hypercube, e for efast, s for SBML Intervention
+
+while getopts ":rles" opt; do
+  case $opt in
+    r)
+	java -jar YCIL_Sim_Toolkit.jar "r" $SETTINGS
+      ;;
+    l)
+	java -jar YCIL_Sim_Toolkit.jar "l" $SETTINGS
+      ;;
+    e)
+	java -jar YCIL_Sim_Toolkit.jar "e" $SETTINGS
+      ;;
+    s)
+	java -jar YCIL_Sim_Toolkit.jar "s" $SETTINGS
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      ;;
+  esac
+
+
+done

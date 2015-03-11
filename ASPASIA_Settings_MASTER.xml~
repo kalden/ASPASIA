@@ -1,0 +1,51 @@
+<xml>
+	<!--ASPASIA SETTINGS FILE FOR VERSION 1.0-->
+	
+	<!-- FIRSTLY, IF YOU ARE ANALYSING AN SBML SIMULATION, SET THE SBMLFORMAT TAG TO TRUE -->
+	<sbmlFormat>true</sbmlFormat>
+	<!-- REPAST FUNCTIONALITY WILL BE COMING IN ASPASIA VERSION 2 - FOR THE MOMENT THIS IS LEFT AS FALSE
+	BOTH SHOULD NEVER BE SET TO TRUE-->
+	<repastCompatible>false</repastCompatible>
+
+	<!-- NOW ENTER THE FULL PATH TO YOUR ORIGINAL SBML MODEL FILE -->
+	<pathToSimulationParameterFile>[Enter Full Path to File]</pathToSimulationParameterFile>
+
+	<!-- NOW GIVE THE FULL PATH TO THE FOLDER WHERE GENERATED SBML MODEL FILES SHOULD BE STORED -->
+	<parameterFileOutputFolder>[Enter Full Path to Directory]</parameterFileOutputFolder>
+
+	<!-- NOW PARAMETER/SPECIES CONCENTRATION INFORMATION
+	SPECIFY DETAILS FOR EACH PARAMETER/CONCENTRATION BEING ANALYSED, DEPENDENT ON TECHNIQUE.
+	IF PERFORMING ROBUSTNESS ANALYSIS, YOU WILL NEED TO SPECIFY THE TYPE (double, int), MIN VALUE, MAX VALUE, BASELINE/CALIBRATED VALUE,
+	AND INCREMENT, AS SUCH:
+	<parameter type="double" min="0.01" max="0.1" inc="0.01" baseline="0.05">SpleenTCellArr</parameter>
+	IF PERFORMING EFAST OR LATIN-HYPERCUBE, YOU ONLY SPECIFY THE TYPE, MIN, AND MAX, AS SUCH:
+	<parameter type="double" min="0.01" max="0.1">SpleenTCellArr</parameter>
+	IF PERFORMING EFAST, DO NOT ENTER THE DUMMY PARAMETER, THE SOFTWARE ADDS THIS FOR YOU 
+	IF PERFOMING AN INTERVENTION, ENTER THE PARAMETER NAME AND NEW VALUE, AS SUCH:
+	<parameter value="0.1">SpleenTCellArr</parameter>
+	-->
+	<parameter type="double" min="0.01" max="0.1" inc="0.01" baseline="0.05">ParamName1</parameter>
+	<parameter type="double" min="0.01" max="0.1" inc="0.01" baseline="0.05">ParamName2</parameter>
+	<parameter type="int" min="65" max="185" inc="10" baseline="125">ParamName3</parameter>
+	<parameter type="double" min="0.001" max="0.004" inc="0.0005" baseline="0.002">ParamName4</parameter>
+
+	<!-- ANALYSIS SPECIFIC PARAAMETERS
+	THERE ARE NO ADDITIONAL PARAMETERS REQUIRED FOR ROBUSTNESS ANALYSIS
+
+	IF PERFORMING A LATIN HYPERCUBE ANALYSIS, YOU MUST SPECIFY HOW MANY PARAMETER SETS TO GENERATE, AND WHICH ALGORITHM TO USE (normal OR optimal) -->
+	<numberparameterSamples>200</numberparameterSamples>
+	<algorithm>normal</algorithm>
+	<!-- IF HOWEVER YOU WANT TO PROVIDE A FILE CONTAINING A NUMBER OF PARAMETER VALUE SETS FROM A HYPERCUBE, AND JUST GENERATE THE SBML MODELS,
+	PROVIDE A FULL PATH TO THIS FILE. IF YOU ARE NOT PROVIDING THIS, DELETE THIS TAG -->
+	<lhcPreGeneratedSampleFile>[Enter Full Path to File]</lhcPreGeneratedSampleFile>
+
+	<!-- IF PERFORMING EFAST ANALYSIS, YOU MUST SPECIFY THE NUMBER OF RESAMPLING CURVES AND THE NUMBER OF SAMPLES TO TAKE FROM EACH CURVE -->
+	<efastCurves>3</efastCurves>
+	<efastCurveSamples>65</efastCurveSamples>
+
+	<!-- IF PERFORMING AN INTERVENTION, YOU MUST SPECIFY THE FULL PATH TO THE SBML SOLVER OUTPUT AND THE NAME TO GIVE THE NEW SBML MODEL. THIS WILL 
+	BE PRODUCED IN THE FOLDER SPECIFIED IN parameterFileOutputFolder -->
+	<sbmlRunResultsFile>[Full Path to SBML Solver Generated CSV File]</sbmlRunResultsFile>
+	<newParamFileName>[Name to give new SBML Model File - not full path]</newParamFileName>
+	
+</xml>
