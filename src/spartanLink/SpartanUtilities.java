@@ -4,6 +4,8 @@
 package spartanLink;
 
 /**
+ * \brief Utility methods for connecting ASPASIA to the Spartan package
+ * 
  * Generates parameter samples by running the specified spartan analysis. This
  * creates CSV files containing parameter samples that are later processed into
  * parameter XML files

@@ -1,0 +1,63 @@
+\hypertarget{classspartanLink_1_1GenerateSpartanOATFile}{}\section{spartan\+Link.\+Generate\+Spartan\+O\+A\+T\+File Class Reference}
+\label{classspartanLink_1_1GenerateSpartanOATFile}\index{spartan\+Link.\+Generate\+Spartan\+O\+A\+T\+File@{spartan\+Link.\+Generate\+Spartan\+O\+A\+T\+File}}
+
+
+Generates the script to perform Robustness Analysis Parameter Sampling in Spartan.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classspartanLink_1_1GenerateSpartanOATFile_a86dab58f5a096d2ed0085adf958ea158}{Create\+Spartan\+L\+H\+C\+Script} (String output\+Path, Array\+List$<$ String $>$ parameters, Array\+List$<$ String $>$ min\+Vals, Array\+List$<$ String $>$ max\+Vals, Array\+List$<$ String $>$ baseline, Array\+List$<$ String $>$ increment)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generates the script to perform Robustness Analysis Parameter Sampling in Spartan. 
+
+\begin{DoxyAuthor}{Author}
+Kieran Alden, York Computational Immunology Lab 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+February 2015 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classspartanLink_1_1GenerateSpartanOATFile_a86dab58f5a096d2ed0085adf958ea158}{}\index{spartan\+Link\+::\+Generate\+Spartan\+O\+A\+T\+File@{spartan\+Link\+::\+Generate\+Spartan\+O\+A\+T\+File}!Create\+Spartan\+L\+H\+C\+Script@{Create\+Spartan\+L\+H\+C\+Script}}
+\index{Create\+Spartan\+L\+H\+C\+Script@{Create\+Spartan\+L\+H\+C\+Script}!spartan\+Link\+::\+Generate\+Spartan\+O\+A\+T\+File@{spartan\+Link\+::\+Generate\+Spartan\+O\+A\+T\+File}}
+\subsubsection[{Create\+Spartan\+L\+H\+C\+Script}]{\setlength{\rightskip}{0pt plus 5cm}static void spartan\+Link.\+Generate\+Spartan\+O\+A\+T\+File.\+Create\+Spartan\+L\+H\+C\+Script (
+\begin{DoxyParamCaption}
+\item[{String}]{output\+Path, }
+\item[{Array\+List$<$ String $>$}]{parameters, }
+\item[{Array\+List$<$ String $>$}]{min\+Vals, }
+\item[{Array\+List$<$ String $>$}]{max\+Vals, }
+\item[{Array\+List$<$ String $>$}]{baseline, }
+\item[{Array\+List$<$ String $>$}]{increment}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classspartanLink_1_1GenerateSpartanOATFile_a86dab58f5a096d2ed0085adf958ea158}
+Takes the information from the X\+M\+L settings file and creates an R script that performs L\+H\+C sampling for the specified parameters
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+Path} & Where the parameter sample C\+S\+V file spartan produces should be stored \\
+\hline
+{\em parameters} & Array\+List of parameters from the X\+M\+L file, for which values will be created \\
+\hline
+{\em min\+Vals} & Array\+List of the minimum values of each parameter \\
+\hline
+{\em max\+Vals} & Array\+List of the maximum values of each parameter \\
+\hline
+{\em max\+Vals} & Array\+List of the baseline values of each parameter \\
+\hline
+{\em increment} & Array\+List of the values for which sampling should be incremented, for each parameter \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/spartan\+Link/\hyperlink{GenerateSpartanOATFile_8java}{Generate\+Spartan\+O\+A\+T\+File.\+java}\end{DoxyCompactItemize}

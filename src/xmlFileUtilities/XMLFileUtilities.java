@@ -1,7 +1,7 @@
 /**
- * \package XMLFileUtilities
+ * \package xmlFileUtilities
  * 
- * Package containing utilities to process simulation and sensitivity analysis XML files.
+ * \brief Package containing utilities to process simulation and sensitivity analysis XML files.
  */
 package xmlFileUtilities;
 
@@ -15,9 +15,10 @@ import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
 
 /**
- * Provides functions to read in and process information from XML files. This
- * can be used to read in simulation information and process the sensitivity
- * analysis settings file
+ * \brief Provides functions to read in and process information from XML files.
+ * 
+ * This can be used to read in simulation information and process the
+ * sensitivity analysis settings file
  * 
  * @author Kieran Alden, York Computational Immunology Lab
  * @version 1.0

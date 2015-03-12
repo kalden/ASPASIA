@@ -1,0 +1,283 @@
+\hypertarget{classxmlFileUtilities_1_1XMLFileUtilities}{}\section{xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities Class Reference}
+\label{classxmlFileUtilities_1_1XMLFileUtilities}\index{xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities}}
+
+
+Provides functions to read in and process information from X\+M\+L files.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a8b8c45e8f1fec8417f4843df35a9bd26}{read\+Settings\+File} (String settings\+File\+Path)
+\item 
+static String \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a4983f89700a65cf368e50c15f7da1057}{get\+Param} (String param\+Name)
+\item 
+static Boolean \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a725f36019222164d5a024a4658ef7573}{get\+Param\+Boolean} (String param\+Name)
+\item 
+static int \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a3027a3086dab10e1605ec36d0a15c13b}{get\+Param\+Integer} (String param\+Name)
+\item 
+static double \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_afea2fe3c4e33a4379f4beda19fa98998}{get\+Param\+Double} (String param\+Name)
+\item 
+static Array\+List$<$ String $>$ \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a1ce237ed88984186f55fec221899b56e}{get\+Param\+String\+List} (String param\+Name)
+\item 
+static Array\+List$<$ Integer $>$ \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a49faaf9bf92fda538a5f93b60a0f210f}{get\+Param\+Integer\+List} (String param\+Name)
+\item 
+static Array\+List$<$ Double $>$ \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_afb36ff9d3a94c182419e2234d66b6854}{get\+Param\+Double\+List} (String param\+Name)
+\item 
+static boolean \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a33c3a2f0676929c537236aec9dd2e301}{read\+Parameter\+Info} (String analysis\+Method)
+\item 
+static void \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a0e970d95c0631fb119f9978782e204c6}{check\+Value\+Entered} (String xml\+Param\+Field\+Value, String description, String parameter, String method)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Element \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a936db354ec5ded79b915e60aa81ef757}{xml\+Doc\+Root}
+\item 
+static boolean \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_ac1cd9779fc740585e585498ab598a573}{repast\+Compatible}
+\item 
+static Array\+List$<$ String $>$ \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_aec3cff4dd69b480894a8d3f78d414791}{parameters\+Analysed}
+\item 
+static Array\+List$<$ String $>$ \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a5c6314af241e98f0701b3694e364e27e}{parameter\+Type}
+\item 
+static Array\+List$<$ String $>$ \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a20c1b1d6bf709a9e1aea4cc7e38ec2fe}{min\+Vals}
+\item 
+static Array\+List$<$ String $>$ \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a6db58012fe79cf36d772eda6fc4aa484}{max\+Vals}
+\item 
+static Array\+List$<$ String $>$ \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_aff7782e4e87133c300f459f956acdacf}{inc\+Vals}
+\item 
+static Array\+List$<$ String $>$ \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a29f06ee2eff3920a793bf1418e04375b}{baseline\+Vals}
+\item 
+static Array\+List$<$ String $>$ \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_af7660bd6cf5d1988e53ebdacfda88565}{values}
+\item 
+static Array\+List$<$ Double $>$ \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a74e7bbbaf59c27ca16b4d2696b1a7a57}{sbml\+Set\+Values}
+\item 
+static boolean \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_a9d2c9fb596b4f8c0fff694f78259d786}{error\+Check} = true
+\item 
+static boolean \hyperlink{classxmlFileUtilities_1_1XMLFileUtilities_ae10435eb2f2b4c128b4c658edc8fa2e9}{oat\+Values\+Flag} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides functions to read in and process information from X\+M\+L files. 
+
+This can be used to read in simulation information and process the sensitivity analysis settings file
+
+\begin{DoxyAuthor}{Author}
+Kieran Alden, York Computational Immunology Lab 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+February 2015 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a0e970d95c0631fb119f9978782e204c6}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!check\+Value\+Entered@{check\+Value\+Entered}}
+\index{check\+Value\+Entered@{check\+Value\+Entered}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{check\+Value\+Entered}]{\setlength{\rightskip}{0pt plus 5cm}static void xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+check\+Value\+Entered (
+\begin{DoxyParamCaption}
+\item[{String}]{xml\+Param\+Field\+Value, }
+\item[{String}]{description, }
+\item[{String}]{parameter, }
+\item[{String}]{method}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a0e970d95c0631fb119f9978782e204c6}
+Checks that the user has entered a value for a specified X\+M\+L tag -\/ min, max, or increment
+
+
+\begin{DoxyParams}{Parameters}
+{\em xml\+Param\+Field\+Value} & The X\+M\+L field to check \\
+\hline
+{\em description} & The field -\/ min, max, or inc \\
+\hline
+{\em parameter} & The parameter being processed \\
+\hline
+{\em method} & The analysis method being applied \\
+\hline
+\end{DoxyParams}
+\hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a4983f89700a65cf368e50c15f7da1057}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!get\+Param@{get\+Param}}
+\index{get\+Param@{get\+Param}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{get\+Param}]{\setlength{\rightskip}{0pt plus 5cm}static String xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+get\+Param (
+\begin{DoxyParamCaption}
+\item[{String}]{param\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a4983f89700a65cf368e50c15f7da1057}
+Return a string parameter from the X\+M\+L file, or sensitivity analysis settings file
+
+
+\begin{DoxyParams}{Parameters}
+{\em param\+Name} & The name of the parameter for which the value is requested \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String value of that parameter in the X\+M\+L file. Null is returned if no tag is found 
+\end{DoxyReturn}
+\hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a725f36019222164d5a024a4658ef7573}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!get\+Param\+Boolean@{get\+Param\+Boolean}}
+\index{get\+Param\+Boolean@{get\+Param\+Boolean}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{get\+Param\+Boolean}]{\setlength{\rightskip}{0pt plus 5cm}static Boolean xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+get\+Param\+Boolean (
+\begin{DoxyParamCaption}
+\item[{String}]{param\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a725f36019222164d5a024a4658ef7573}
+Return a boolean parameter from the X\+M\+L file, or sensitivity analysis settings file
+
+
+\begin{DoxyParams}{Parameters}
+{\em param\+Name} & The name of the parameter for which the value is requested \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value of that parameter in the X\+M\+L file. Null is returned if no tag is found 
+\end{DoxyReturn}
+\hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_afea2fe3c4e33a4379f4beda19fa98998}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!get\+Param\+Double@{get\+Param\+Double}}
+\index{get\+Param\+Double@{get\+Param\+Double}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{get\+Param\+Double}]{\setlength{\rightskip}{0pt plus 5cm}static double xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+get\+Param\+Double (
+\begin{DoxyParamCaption}
+\item[{String}]{param\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_afea2fe3c4e33a4379f4beda19fa98998}
+Return a double parameter from the X\+M\+L file, or sensitivity analysis settings file
+
+
+\begin{DoxyParams}{Parameters}
+{\em param\+Name} & The name of the parameter for which the value is requested \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Double value of that parameter in the X\+M\+L file. Null is returned if no tag is found 
+\end{DoxyReturn}
+\hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_afb36ff9d3a94c182419e2234d66b6854}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!get\+Param\+Double\+List@{get\+Param\+Double\+List}}
+\index{get\+Param\+Double\+List@{get\+Param\+Double\+List}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{get\+Param\+Double\+List}]{\setlength{\rightskip}{0pt plus 5cm}static Array\+List$<$Double$>$ xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+get\+Param\+Double\+List (
+\begin{DoxyParamCaption}
+\item[{String}]{param\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_afb36ff9d3a94c182419e2234d66b6854}
+Return an Array\+List comprised of double elements in the parameter file that were specified as a comma separated list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em param\+Name} & The name of the parameter for which the value is requested \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array\+List of double values associated with this parameter 
+\end{DoxyReturn}
+\hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a3027a3086dab10e1605ec36d0a15c13b}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!get\+Param\+Integer@{get\+Param\+Integer}}
+\index{get\+Param\+Integer@{get\+Param\+Integer}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{get\+Param\+Integer}]{\setlength{\rightskip}{0pt plus 5cm}static int xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+get\+Param\+Integer (
+\begin{DoxyParamCaption}
+\item[{String}]{param\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a3027a3086dab10e1605ec36d0a15c13b}
+Return an integer parameter from the X\+M\+L file, or sensitivity analysis settings file
+
+
+\begin{DoxyParams}{Parameters}
+{\em param\+Name} & The name of the parameter for which the value is requested \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer value of that parameter in the X\+M\+L file. Null is returned if no tag is found 
+\end{DoxyReturn}
+\hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a49faaf9bf92fda538a5f93b60a0f210f}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!get\+Param\+Integer\+List@{get\+Param\+Integer\+List}}
+\index{get\+Param\+Integer\+List@{get\+Param\+Integer\+List}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{get\+Param\+Integer\+List}]{\setlength{\rightskip}{0pt plus 5cm}static Array\+List$<$Integer$>$ xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+get\+Param\+Integer\+List (
+\begin{DoxyParamCaption}
+\item[{String}]{param\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a49faaf9bf92fda538a5f93b60a0f210f}
+Return an Array\+List comprised of integer elements in the parameter file that were specified as a comma separated list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em param\+Name} & The name of the parameter for which the value is requested \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array\+List of integer values associated with this parameter 
+\end{DoxyReturn}
+\hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a1ce237ed88984186f55fec221899b56e}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!get\+Param\+String\+List@{get\+Param\+String\+List}}
+\index{get\+Param\+String\+List@{get\+Param\+String\+List}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{get\+Param\+String\+List}]{\setlength{\rightskip}{0pt plus 5cm}static Array\+List$<$String$>$ xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+get\+Param\+String\+List (
+\begin{DoxyParamCaption}
+\item[{String}]{param\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a1ce237ed88984186f55fec221899b56e}
+Return an Array\+List comprised of string elements in the parameter file that were specified as a comma separated list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em param\+Name} & The name of the parameter for which the value is requested \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array\+List of string values associated with this parameter 
+\end{DoxyReturn}
+\hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a33c3a2f0676929c537236aec9dd2e301}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!read\+Parameter\+Info@{read\+Parameter\+Info}}
+\index{read\+Parameter\+Info@{read\+Parameter\+Info}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{read\+Parameter\+Info}]{\setlength{\rightskip}{0pt plus 5cm}static boolean xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+read\+Parameter\+Info (
+\begin{DoxyParamCaption}
+\item[{String}]{analysis\+Method}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a33c3a2f0676929c537236aec9dd2e301}
+Used in Sensitivity analysis experiments -\/ reads in parameter information for the analysis. This is stored in the appropriate arrays\+: parameter name, type of parameter, and min, max, and increment values. The latter three are only required for robustness analysis and as such may not exist in L\+H\+C and e\+F\+A\+S\+T analyses. \hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a8b8c45e8f1fec8417f4843df35a9bd26}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!read\+Settings\+File@{read\+Settings\+File}}
+\index{read\+Settings\+File@{read\+Settings\+File}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{read\+Settings\+File}]{\setlength{\rightskip}{0pt plus 5cm}static void xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+read\+Settings\+File (
+\begin{DoxyParamCaption}
+\item[{String}]{settings\+File\+Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a8b8c45e8f1fec8417f4843df35a9bd26}
+Reads in the X\+M\+L file specified in the input argument, initialising the class ready to process information contained within that file
+
+
+\begin{DoxyParams}{Parameters}
+{\em settings\+File\+Path} & Full path to the simulation parameter file, or senstivity analysis settings file \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a29f06ee2eff3920a793bf1418e04375b}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!baseline\+Vals@{baseline\+Vals}}
+\index{baseline\+Vals@{baseline\+Vals}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{baseline\+Vals}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$String$>$ xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+baseline\+Vals\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a29f06ee2eff3920a793bf1418e04375b}
+Baseline values of each parameter \hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a9d2c9fb596b4f8c0fff694f78259d786}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!error\+Check@{error\+Check}}
+\index{error\+Check@{error\+Check}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{error\+Check}]{\setlength{\rightskip}{0pt plus 5cm}boolean xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+error\+Check = true\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a9d2c9fb596b4f8c0fff694f78259d786}
+Returned to note whether all parameter details have been specified as they should have been \hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_aff7782e4e87133c300f459f956acdacf}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!inc\+Vals@{inc\+Vals}}
+\index{inc\+Vals@{inc\+Vals}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{inc\+Vals}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$String$>$ xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+inc\+Vals\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_aff7782e4e87133c300f459f956acdacf}
+Increment values for each parameter \hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a6db58012fe79cf36d772eda6fc4aa484}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!max\+Vals@{max\+Vals}}
+\index{max\+Vals@{max\+Vals}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{max\+Vals}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$String$>$ xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+max\+Vals\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a6db58012fe79cf36d772eda6fc4aa484}
+Max values for each parameter \hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a20c1b1d6bf709a9e1aea4cc7e38ec2fe}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!min\+Vals@{min\+Vals}}
+\index{min\+Vals@{min\+Vals}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{min\+Vals}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$String$>$ xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+min\+Vals\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a20c1b1d6bf709a9e1aea4cc7e38ec2fe}
+Min values for each parameter \hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_ae10435eb2f2b4c128b4c658edc8fa2e9}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!oat\+Values\+Flag@{oat\+Values\+Flag}}
+\index{oat\+Values\+Flag@{oat\+Values\+Flag}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{oat\+Values\+Flag}]{\setlength{\rightskip}{0pt plus 5cm}boolean xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+oat\+Values\+Flag = false\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_ae10435eb2f2b4c128b4c658edc8fa2e9}
+Flag to determine if the user has specified O\+A\+T values in a traditional increment manner, or as a list \hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_aec3cff4dd69b480894a8d3f78d414791}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!parameters\+Analysed@{parameters\+Analysed}}
+\index{parameters\+Analysed@{parameters\+Analysed}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{parameters\+Analysed}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$String$>$ xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+parameters\+Analysed\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_aec3cff4dd69b480894a8d3f78d414791}
+Array list of the names of parameters being analysed \hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a5c6314af241e98f0701b3694e364e27e}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!parameter\+Type@{parameter\+Type}}
+\index{parameter\+Type@{parameter\+Type}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{parameter\+Type}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$String$>$ xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+parameter\+Type\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a5c6314af241e98f0701b3694e364e27e}
+Array list of the data type of each parameter being analysed \hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_ac1cd9779fc740585e585498ab598a573}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!repast\+Compatible@{repast\+Compatible}}
+\index{repast\+Compatible@{repast\+Compatible}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{repast\+Compatible}]{\setlength{\rightskip}{0pt plus 5cm}boolean xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+repast\+Compatible\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_ac1cd9779fc740585e585498ab598a573}
+Whether X\+M\+L files are being built that are compatible with Repast Simulations \hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a74e7bbbaf59c27ca16b4d2696b1a7a57}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!sbml\+Set\+Values@{sbml\+Set\+Values}}
+\index{sbml\+Set\+Values@{sbml\+Set\+Values}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{sbml\+Set\+Values}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$Double$>$ xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+sbml\+Set\+Values\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a74e7bbbaf59c27ca16b4d2696b1a7a57}
+Used for Steph\textquotesingle{}s method to set certain S\+B\+M\+L values when making a parameter file from a results file \hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_af7660bd6cf5d1988e53ebdacfda88565}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!values@{values}}
+\index{values@{values}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{values}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$String$>$ xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+values\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_af7660bd6cf5d1988e53ebdacfda88565}
+For cases where an increment is not used, but specific values, the list of the values to use \hypertarget{classxmlFileUtilities_1_1XMLFileUtilities_a936db354ec5ded79b915e60aa81ef757}{}\index{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}!xml\+Doc\+Root@{xml\+Doc\+Root}}
+\index{xml\+Doc\+Root@{xml\+Doc\+Root}!xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities@{xml\+File\+Utilities\+::\+X\+M\+L\+File\+Utilities}}
+\subsubsection[{xml\+Doc\+Root}]{\setlength{\rightskip}{0pt plus 5cm}Element xml\+File\+Utilities.\+X\+M\+L\+File\+Utilities.\+xml\+Doc\+Root\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1XMLFileUtilities_a936db354ec5ded79b915e60aa81ef757}
+Root of the X\+M\+L document being read by the class 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/xml\+File\+Utilities/\hyperlink{XMLFileUtilities_8java}{X\+M\+L\+File\+Utilities.\+java}\end{DoxyCompactItemize}

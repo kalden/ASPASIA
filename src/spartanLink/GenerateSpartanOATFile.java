@@ -1,11 +1,14 @@
+/**
+ * Runs the spartan sampling in R, without the need to do this externally
+ */
 package spartanLink;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
- * Generates an R compatible script for performing robustness analysis from the
- * information in the XML file
+ * \brief Generates the script to perform Robustness Analysis Parameter Sampling
+ * in Spartan
  * 
  * @author Kieran Alden, York Computational Immunology Lab
  * @version 1.0

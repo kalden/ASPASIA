@@ -1,0 +1,88 @@
+\hypertarget{classmodelCreation_1_1Create__LHC__Models}{}\section{model\+Creation.\+Create\+\_\+\+L\+H\+C\+\_\+\+Models Class Reference}
+\label{classmodelCreation_1_1Create__LHC__Models}\index{model\+Creation.\+Create\+\_\+\+L\+H\+C\+\_\+\+Models@{model\+Creation.\+Create\+\_\+\+L\+H\+C\+\_\+\+Models}}
+
+
+Create simulation parameter files for latin-\/hypercube analysis.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmodelCreation_1_1Create__LHC__Models_a12eb4a69be71e3761ae14100fa4f101b}{Create\+\_\+\+L\+H\+C\+\_\+\+Models} (String settings\+File)
+\item 
+void \hyperlink{classmodelCreation_1_1Create__LHC__Models_a0783eb68f0d30deab12a86b5c34a4646}{write\+L\+H\+C\+Parameter\+Files} (String pre\+Generated\+Values)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{classmodelCreation_1_1Create__LHC__Models_a0d474e7cfe2b5a5c6a7210898f779447}{sbml\+Compatible}
+\item 
+String \hyperlink{classmodelCreation_1_1Create__LHC__Models_a6d699bb962a4fcc0c5eed980d674e1e2}{params\+Meta\+Data\+File\+Path}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Create simulation parameter files for latin-\/hypercube analysis. 
+
+Steps in this process\+: 1. Generate a latin-\/hypercube sample for a subset of simulation parameters using spartan 2. Set the location of the sample above (the csv file), the names of the parameters of interest, a location of a parameter file at which parameters are at calibrated values, the number of samples taken, and a location for the output files, in the main method below
+\begin{DoxyEnumerate}
+\item Run this java program. A parameter file will be created for each sample set in the analysis, with parameters of interest at their values set in the hypercube, and those not of interest set from their calibrated value
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Kieran Alden, York Computational Immunology Lab 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+February 2015 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmodelCreation_1_1Create__LHC__Models_a12eb4a69be71e3761ae14100fa4f101b}{}\index{model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models}!Create\+\_\+\+L\+H\+C\+\_\+\+Models@{Create\+\_\+\+L\+H\+C\+\_\+\+Models}}
+\index{Create\+\_\+\+L\+H\+C\+\_\+\+Models@{Create\+\_\+\+L\+H\+C\+\_\+\+Models}!model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models}}
+\subsubsection[{Create\+\_\+\+L\+H\+C\+\_\+\+Models}]{\setlength{\rightskip}{0pt plus 5cm}model\+Creation.\+Create\+\_\+\+L\+H\+C\+\_\+\+Models.\+Create\+\_\+\+L\+H\+C\+\_\+\+Models (
+\begin{DoxyParamCaption}
+\item[{String}]{settings\+File}
+\end{DoxyParamCaption}
+)}\label{classmodelCreation_1_1Create__LHC__Models_a12eb4a69be71e3761ae14100fa4f101b}
+Program to create parameter files for latin-\/hypercube experiments. Takes the spreadsheet generated in spartan and replaces the values of parameters of interest in a calibration parameter file with the perturbed values. Does this for all sample sets generated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em settings\+File} & Full path to the sensitivity analysis X\+M\+L settings file \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmodelCreation_1_1Create__LHC__Models_a0783eb68f0d30deab12a86b5c34a4646}{}\index{model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models}!write\+L\+H\+C\+Parameter\+Files@{write\+L\+H\+C\+Parameter\+Files}}
+\index{write\+L\+H\+C\+Parameter\+Files@{write\+L\+H\+C\+Parameter\+Files}!model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models}}
+\subsubsection[{write\+L\+H\+C\+Parameter\+Files}]{\setlength{\rightskip}{0pt plus 5cm}void model\+Creation.\+Create\+\_\+\+L\+H\+C\+\_\+\+Models.\+write\+L\+H\+C\+Parameter\+Files (
+\begin{DoxyParamCaption}
+\item[{String}]{pre\+Generated\+Values}
+\end{DoxyParamCaption}
+)}\label{classmodelCreation_1_1Create__LHC__Models_a0783eb68f0d30deab12a86b5c34a4646}
+Write the parameter files for each value set created by Spartan
+
+
+\begin{DoxyParams}{Parameters}
+{\em pre\+Generated\+Values} & If not using spartan to generate the values, this contains the full address of a file containing the values to put in the parameter files \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodelCreation_1_1Create__LHC__Models_a6d699bb962a4fcc0c5eed980d674e1e2}{}\index{model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models}!params\+Meta\+Data\+File\+Path@{params\+Meta\+Data\+File\+Path}}
+\index{params\+Meta\+Data\+File\+Path@{params\+Meta\+Data\+File\+Path}!model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models}}
+\subsubsection[{params\+Meta\+Data\+File\+Path}]{\setlength{\rightskip}{0pt plus 5cm}String model\+Creation.\+Create\+\_\+\+L\+H\+C\+\_\+\+Models.\+params\+Meta\+Data\+File\+Path}\label{classmodelCreation_1_1Create__LHC__Models_a6d699bb962a4fcc0c5eed980d674e1e2}
+The original, calibrated parameter file \hypertarget{classmodelCreation_1_1Create__LHC__Models_a0d474e7cfe2b5a5c6a7210898f779447}{}\index{model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models}!sbml\+Compatible@{sbml\+Compatible}}
+\index{sbml\+Compatible@{sbml\+Compatible}!model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+L\+H\+C\+\_\+\+Models}}
+\subsubsection[{sbml\+Compatible}]{\setlength{\rightskip}{0pt plus 5cm}boolean model\+Creation.\+Create\+\_\+\+L\+H\+C\+\_\+\+Models.\+sbml\+Compatible}\label{classmodelCreation_1_1Create__LHC__Models_a0d474e7cfe2b5a5c6a7210898f779447}
+Whether we are creating Repast Compatible files\+: T\+O C\+O\+M\+E I\+N V\+E\+R\+S\+I\+O\+N 2 Whether we are creating S\+B\+M\+L files 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/model\+Creation/\hyperlink{Create__LHC__Models_8java}{Create\+\_\+\+L\+H\+C\+\_\+\+Models.\+java}\end{DoxyCompactItemize}

@@ -1,0 +1,83 @@
+\hypertarget{classmodelCreation_1_1Create__Robustness__Models}{}\section{model\+Creation.\+Create\+\_\+\+Robustness\+\_\+\+Models Class Reference}
+\label{classmodelCreation_1_1Create__Robustness__Models}\index{model\+Creation.\+Create\+\_\+\+Robustness\+\_\+\+Models@{model\+Creation.\+Create\+\_\+\+Robustness\+\_\+\+Models}}
+
+
+Create simulation parameter files for parameter robustness analysis.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmodelCreation_1_1Create__Robustness__Models_ab4258144b80b67706aca0486a503ece5}{Create\+\_\+\+Robustness\+\_\+\+Models} (String settings\+File)
+\item 
+void \hyperlink{classmodelCreation_1_1Create__Robustness__Models_a49763adc938d1f68b903fef4dc530ff5}{write\+O\+A\+T\+Parameter\+Files} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{classmodelCreation_1_1Create__Robustness__Models_aff768751c3612fdc9b5afc935c0abe17}{sbml\+Compatible}
+\item 
+String \hyperlink{classmodelCreation_1_1Create__Robustness__Models_ad8c3635432767fd3c64c2dacc45b092d}{params\+Meta\+Data\+File\+Path}
+\item 
+String \hyperlink{classmodelCreation_1_1Create__Robustness__Models_a9a315c611d8f13136dc6e37482a763a4}{param\+File\+Output\+Folder}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Create simulation parameter files for parameter robustness analysis. 
+
+Steps in this process\+: 1. Generate robustness analysis samples for a subset of simulation parameters using spartan (creates a file for each parameter) 2. Set the location of the folder containing these C\+S\+V files, the names of the parameters of interest, a location of a parameter file at which parameters are at calibrated values, and a location for the output files, in the main method below 3. Run this java program. A parameter file will be created for each sample set in the analysis, with parameters of interest at their values set by the spartan sample, and those not of interest set from their calibrated value
+
+\begin{DoxyAuthor}{Author}
+Kieran Alden, York Computational Immunology Lab 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+February 2015 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmodelCreation_1_1Create__Robustness__Models_ab4258144b80b67706aca0486a503ece5}{}\index{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models}!Create\+\_\+\+Robustness\+\_\+\+Models@{Create\+\_\+\+Robustness\+\_\+\+Models}}
+\index{Create\+\_\+\+Robustness\+\_\+\+Models@{Create\+\_\+\+Robustness\+\_\+\+Models}!model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models}}
+\subsubsection[{Create\+\_\+\+Robustness\+\_\+\+Models}]{\setlength{\rightskip}{0pt plus 5cm}model\+Creation.\+Create\+\_\+\+Robustness\+\_\+\+Models.\+Create\+\_\+\+Robustness\+\_\+\+Models (
+\begin{DoxyParamCaption}
+\item[{String}]{settings\+File}
+\end{DoxyParamCaption}
+)}\label{classmodelCreation_1_1Create__Robustness__Models_ab4258144b80b67706aca0486a503ece5}
+Count of number of parameter files generated per parameter. Used for repast model building -\/ P\+L\+A\+N\+N\+E\+D I\+N\+T\+R\+O\+D\+U\+C\+T\+I\+O\+N I\+N V\+E\+R\+S\+I\+O\+N 2 Program to create parameter files for parameter robustness experiments. Takes the spreadsheet generated in spartan and replaces the values of parameters of interest in a calibration parameter file with the perturbed values. Does this for all sample sets generated, for all parameters
+
+
+\begin{DoxyParams}{Parameters}
+{\em settings\+File} & Full path to the sensitivity analysis X\+M\+L settings file \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmodelCreation_1_1Create__Robustness__Models_a49763adc938d1f68b903fef4dc530ff5}{}\index{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models}!write\+O\+A\+T\+Parameter\+Files@{write\+O\+A\+T\+Parameter\+Files}}
+\index{write\+O\+A\+T\+Parameter\+Files@{write\+O\+A\+T\+Parameter\+Files}!model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models}}
+\subsubsection[{write\+O\+A\+T\+Parameter\+Files}]{\setlength{\rightskip}{0pt plus 5cm}void model\+Creation.\+Create\+\_\+\+Robustness\+\_\+\+Models.\+write\+O\+A\+T\+Parameter\+Files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classmodelCreation_1_1Create__Robustness__Models_a49763adc938d1f68b903fef4dc530ff5}
+Write the parameter files for each value set created by Spartan 
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodelCreation_1_1Create__Robustness__Models_a9a315c611d8f13136dc6e37482a763a4}{}\index{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models}!param\+File\+Output\+Folder@{param\+File\+Output\+Folder}}
+\index{param\+File\+Output\+Folder@{param\+File\+Output\+Folder}!model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models}}
+\subsubsection[{param\+File\+Output\+Folder}]{\setlength{\rightskip}{0pt plus 5cm}String model\+Creation.\+Create\+\_\+\+Robustness\+\_\+\+Models.\+param\+File\+Output\+Folder}\label{classmodelCreation_1_1Create__Robustness__Models_a9a315c611d8f13136dc6e37482a763a4}
+Folder where you want adapted parameter files to be stored \hypertarget{classmodelCreation_1_1Create__Robustness__Models_ad8c3635432767fd3c64c2dacc45b092d}{}\index{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models}!params\+Meta\+Data\+File\+Path@{params\+Meta\+Data\+File\+Path}}
+\index{params\+Meta\+Data\+File\+Path@{params\+Meta\+Data\+File\+Path}!model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models}}
+\subsubsection[{params\+Meta\+Data\+File\+Path}]{\setlength{\rightskip}{0pt plus 5cm}String model\+Creation.\+Create\+\_\+\+Robustness\+\_\+\+Models.\+params\+Meta\+Data\+File\+Path}\label{classmodelCreation_1_1Create__Robustness__Models_ad8c3635432767fd3c64c2dacc45b092d}
+The original, calibrated parameter file \hypertarget{classmodelCreation_1_1Create__Robustness__Models_aff768751c3612fdc9b5afc935c0abe17}{}\index{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models}!sbml\+Compatible@{sbml\+Compatible}}
+\index{sbml\+Compatible@{sbml\+Compatible}!model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+\+Robustness\+\_\+\+Models}}
+\subsubsection[{sbml\+Compatible}]{\setlength{\rightskip}{0pt plus 5cm}boolean model\+Creation.\+Create\+\_\+\+Robustness\+\_\+\+Models.\+sbml\+Compatible}\label{classmodelCreation_1_1Create__Robustness__Models_aff768751c3612fdc9b5afc935c0abe17}
+Whether we are creating Repast Compatible files -\/ P\+L\+A\+N\+N\+E\+D F\+O\+R V\+E\+R\+S\+I\+O\+N 2 Whether we are creating S\+B\+M\+L files 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/model\+Creation/\hyperlink{Create__Robustness__Models_8java}{Create\+\_\+\+Robustness\+\_\+\+Models.\+java}\end{DoxyCompactItemize}

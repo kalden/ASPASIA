@@ -1,0 +1,93 @@
+\hypertarget{classmodelCreation_1_1SBMLFileFromSolverOutput}{}\section{model\+Creation.\+S\+B\+M\+L\+File\+From\+Solver\+Output Class Reference}
+\label{classmodelCreation_1_1SBMLFileFromSolverOutput}\index{model\+Creation.\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation.\+S\+B\+M\+L\+File\+From\+Solver\+Output}}
+
+
+Takes output from an S\+B\+M\+L Solver and uses this to create a new S\+B\+M\+L Model.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmodelCreation_1_1SBMLFileFromSolverOutput_a026908a2d786f5afd28af3ec10a2ba59}{S\+B\+M\+L\+File\+From\+Solver\+Output} (String settings\+File)
+\item 
+void \hyperlink{classmodelCreation_1_1SBMLFileFromSolverOutput_a8937f216d84ada211edd91fa3eced031}{new\+Model\+From\+Steady\+State} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classmodelCreation_1_1SBMLFileFromSolverOutput_a576ec90f937bd27a6eeb5412cf703982}{sbml\+Run\+Results\+File}
+\item 
+String \hyperlink{classmodelCreation_1_1SBMLFileFromSolverOutput_a3dabc1e12b88d40c848522587c5bf030}{new\+Param\+File\+Name}
+\item 
+String \hyperlink{classmodelCreation_1_1SBMLFileFromSolverOutput_af591398c2cb29728868573ddf6792f69}{param\+File\+Output\+Folder}
+\item 
+String \hyperlink{classmodelCreation_1_1SBMLFileFromSolverOutput_aefcb646a15d0e3309795a5161f64d6a4}{params\+Meta\+Data\+File\+Path}
+\item 
+Map$<$ String, Double $>$ \hyperlink{classmodelCreation_1_1SBMLFileFromSolverOutput_a18afa2219461eb36592c13828a8a8e3d}{parameter\+Val\+Map}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Takes output from an S\+B\+M\+L Solver and uses this to create a new S\+B\+M\+L Model. 
+
+Also capable of then changing the value of some of these responses to introduce an intervention. Then outputs the new S\+B\+M\+L Model file
+
+\begin{DoxyAuthor}{Author}
+Kieran Alden, York Computational Immunology Lab 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+February 2015 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmodelCreation_1_1SBMLFileFromSolverOutput_a026908a2d786f5afd28af3ec10a2ba59}{}\index{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}!S\+B\+M\+L\+File\+From\+Solver\+Output@{S\+B\+M\+L\+File\+From\+Solver\+Output}}
+\index{S\+B\+M\+L\+File\+From\+Solver\+Output@{S\+B\+M\+L\+File\+From\+Solver\+Output}!model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}}
+\subsubsection[{S\+B\+M\+L\+File\+From\+Solver\+Output}]{\setlength{\rightskip}{0pt plus 5cm}model\+Creation.\+S\+B\+M\+L\+File\+From\+Solver\+Output.\+S\+B\+M\+L\+File\+From\+Solver\+Output (
+\begin{DoxyParamCaption}
+\item[{String}]{settings\+File}
+\end{DoxyParamCaption}
+)}\label{classmodelCreation_1_1SBMLFileFromSolverOutput_a026908a2d786f5afd28af3ec10a2ba59}
+Constructor -\/ reads in the values from the settings file then creates the new S\+B\+M\+L model from Solver output, including the intervention
+
+
+\begin{DoxyParams}{Parameters}
+{\em settings\+File} & Full path to the location of the X\+M\+L settings file \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmodelCreation_1_1SBMLFileFromSolverOutput_a8937f216d84ada211edd91fa3eced031}{}\index{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}!new\+Model\+From\+Steady\+State@{new\+Model\+From\+Steady\+State}}
+\index{new\+Model\+From\+Steady\+State@{new\+Model\+From\+Steady\+State}!model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}}
+\subsubsection[{new\+Model\+From\+Steady\+State}]{\setlength{\rightskip}{0pt plus 5cm}void model\+Creation.\+S\+B\+M\+L\+File\+From\+Solver\+Output.\+new\+Model\+From\+Steady\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classmodelCreation_1_1SBMLFileFromSolverOutput_a8937f216d84ada211edd91fa3eced031}
+Creates a new S\+B\+M\+L model file by reading the final line of the S\+B\+M\+L solver output file. Creates a map of parameter to value such that the parameters that are being altered via an intervention can easily be found. These are then assigned values set in the settings file. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodelCreation_1_1SBMLFileFromSolverOutput_a3dabc1e12b88d40c848522587c5bf030}{}\index{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}!new\+Param\+File\+Name@{new\+Param\+File\+Name}}
+\index{new\+Param\+File\+Name@{new\+Param\+File\+Name}!model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}}
+\subsubsection[{new\+Param\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}String model\+Creation.\+S\+B\+M\+L\+File\+From\+Solver\+Output.\+new\+Param\+File\+Name}\label{classmodelCreation_1_1SBMLFileFromSolverOutput_a3dabc1e12b88d40c848522587c5bf030}
+Name to give the parameter file produced from the results file \hypertarget{classmodelCreation_1_1SBMLFileFromSolverOutput_a18afa2219461eb36592c13828a8a8e3d}{}\index{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}!parameter\+Val\+Map@{parameter\+Val\+Map}}
+\index{parameter\+Val\+Map@{parameter\+Val\+Map}!model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}}
+\subsubsection[{parameter\+Val\+Map}]{\setlength{\rightskip}{0pt plus 5cm}Map$<$String, Double$>$ model\+Creation.\+S\+B\+M\+L\+File\+From\+Solver\+Output.\+parameter\+Val\+Map}\label{classmodelCreation_1_1SBMLFileFromSolverOutput_a18afa2219461eb36592c13828a8a8e3d}
+Map of parameter/species name with the value from the results file \hypertarget{classmodelCreation_1_1SBMLFileFromSolverOutput_af591398c2cb29728868573ddf6792f69}{}\index{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}!param\+File\+Output\+Folder@{param\+File\+Output\+Folder}}
+\index{param\+File\+Output\+Folder@{param\+File\+Output\+Folder}!model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}}
+\subsubsection[{param\+File\+Output\+Folder}]{\setlength{\rightskip}{0pt plus 5cm}String model\+Creation.\+S\+B\+M\+L\+File\+From\+Solver\+Output.\+param\+File\+Output\+Folder}\label{classmodelCreation_1_1SBMLFileFromSolverOutput_af591398c2cb29728868573ddf6792f69}
+Folder where the new parameter file should be stored \hypertarget{classmodelCreation_1_1SBMLFileFromSolverOutput_aefcb646a15d0e3309795a5161f64d6a4}{}\index{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}!params\+Meta\+Data\+File\+Path@{params\+Meta\+Data\+File\+Path}}
+\index{params\+Meta\+Data\+File\+Path@{params\+Meta\+Data\+File\+Path}!model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}}
+\subsubsection[{params\+Meta\+Data\+File\+Path}]{\setlength{\rightskip}{0pt plus 5cm}String model\+Creation.\+S\+B\+M\+L\+File\+From\+Solver\+Output.\+params\+Meta\+Data\+File\+Path}\label{classmodelCreation_1_1SBMLFileFromSolverOutput_aefcb646a15d0e3309795a5161f64d6a4}
+Path to full calibrated parameter file \hypertarget{classmodelCreation_1_1SBMLFileFromSolverOutput_a576ec90f937bd27a6eeb5412cf703982}{}\index{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}!sbml\+Run\+Results\+File@{sbml\+Run\+Results\+File}}
+\index{sbml\+Run\+Results\+File@{sbml\+Run\+Results\+File}!model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output@{model\+Creation\+::\+S\+B\+M\+L\+File\+From\+Solver\+Output}}
+\subsubsection[{sbml\+Run\+Results\+File}]{\setlength{\rightskip}{0pt plus 5cm}String model\+Creation.\+S\+B\+M\+L\+File\+From\+Solver\+Output.\+sbml\+Run\+Results\+File}\label{classmodelCreation_1_1SBMLFileFromSolverOutput_a576ec90f937bd27a6eeb5412cf703982}
+Full path to the results file to read in, from an S\+B\+M\+L simulation 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/model\+Creation/\hyperlink{SBMLFileFromSolverOutput_8java}{S\+B\+M\+L\+File\+From\+Solver\+Output.\+java}\end{DoxyCompactItemize}

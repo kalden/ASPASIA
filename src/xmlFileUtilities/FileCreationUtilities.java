@@ -1,3 +1,8 @@
+/**
+ * \package xmlFileUtilities
+ * 
+ * \brief Package containing utilities to process simulation and sensitivity analysis XML files.
+ */
 package xmlFileUtilities;
 
 import java.util.HashMap;
@@ -5,7 +10,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 /**
- * Utilities to aid the creation of SBML and parameter files
+ * \brief Utilities to aid the creation of SBML and parameter files
  * 
  * @author Kieran Alden, York Computational Immunology Lab
  * @version 1.0

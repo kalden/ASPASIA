@@ -1,0 +1,73 @@
+\hypertarget{classxmlFileUtilities_1_1FileCreationUtilities}{}\section{xml\+File\+Utilities.\+File\+Creation\+Utilities Class Reference}
+\label{classxmlFileUtilities_1_1FileCreationUtilities}\index{xml\+File\+Utilities.\+File\+Creation\+Utilities@{xml\+File\+Utilities.\+File\+Creation\+Utilities}}
+
+
+Utilities to aid the creation of S\+B\+M\+L and parameter files.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Map$<$ String, Double $>$ \hyperlink{classxmlFileUtilities_1_1FileCreationUtilities_a4d2f50a15175705082e6f363e1ae67cb}{make\+Parameter\+Val\+Map} (String spartan\+Line)
+\item 
+static Map$<$ String, Double $>$ \hyperlink{classxmlFileUtilities_1_1FileCreationUtilities_a5bf928a92cb64bc495e8832597cb55ae}{make\+Parameter\+Val\+Map} (String parameters, String values)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utilities to aid the creation of S\+B\+M\+L and parameter files. 
+
+\begin{DoxyAuthor}{Author}
+Kieran Alden, York Computational Immunology Lab 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+February 2015 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classxmlFileUtilities_1_1FileCreationUtilities_a4d2f50a15175705082e6f363e1ae67cb}{}\index{xml\+File\+Utilities\+::\+File\+Creation\+Utilities@{xml\+File\+Utilities\+::\+File\+Creation\+Utilities}!make\+Parameter\+Val\+Map@{make\+Parameter\+Val\+Map}}
+\index{make\+Parameter\+Val\+Map@{make\+Parameter\+Val\+Map}!xml\+File\+Utilities\+::\+File\+Creation\+Utilities@{xml\+File\+Utilities\+::\+File\+Creation\+Utilities}}
+\subsubsection[{make\+Parameter\+Val\+Map}]{\setlength{\rightskip}{0pt plus 5cm}static Map$<$String, Double$>$ xml\+File\+Utilities.\+File\+Creation\+Utilities.\+make\+Parameter\+Val\+Map (
+\begin{DoxyParamCaption}
+\item[{String}]{spartan\+Line}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1FileCreationUtilities_a4d2f50a15175705082e6f363e1ae67cb}
+Makes a map from the spartan file, mapping the parameter name to the sampled value. Saves the need for the user to enter the parameter names in the same order as in the file
+
+
+\begin{DoxyParams}{Parameters}
+{\em spartan\+Line} & One line from the spartan C\+S\+V file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map of parameter value to sampled value 
+\end{DoxyReturn}
+\hypertarget{classxmlFileUtilities_1_1FileCreationUtilities_a5bf928a92cb64bc495e8832597cb55ae}{}\index{xml\+File\+Utilities\+::\+File\+Creation\+Utilities@{xml\+File\+Utilities\+::\+File\+Creation\+Utilities}!make\+Parameter\+Val\+Map@{make\+Parameter\+Val\+Map}}
+\index{make\+Parameter\+Val\+Map@{make\+Parameter\+Val\+Map}!xml\+File\+Utilities\+::\+File\+Creation\+Utilities@{xml\+File\+Utilities\+::\+File\+Creation\+Utilities}}
+\subsubsection[{make\+Parameter\+Val\+Map}]{\setlength{\rightskip}{0pt plus 5cm}static Map$<$String, Double$>$ xml\+File\+Utilities.\+File\+Creation\+Utilities.\+make\+Parameter\+Val\+Map (
+\begin{DoxyParamCaption}
+\item[{String}]{parameters, }
+\item[{String}]{values}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classxmlFileUtilities_1_1FileCreationUtilities_a5bf928a92cb64bc495e8832597cb55ae}
+Makes a map from two arguments\+: a comma separated list of parameters and a comma separated list of values, mapping the parameter name to the sampled value. Saves the need for the user to enter the parameter names in the same order as in the file
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & Comma separated text string of parameters \\
+\hline
+{\em values} & Comma separated text string of values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map of parameter value to sampled value 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/xml\+File\+Utilities/\hyperlink{FileCreationUtilities_8java}{File\+Creation\+Utilities.\+java}\end{DoxyCompactItemize}

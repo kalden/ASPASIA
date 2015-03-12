@@ -1,0 +1,108 @@
+\hypertarget{classmodelCreation_1_1Create__eFAST__Models}{}\section{model\+Creation.\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models Class Reference}
+\label{classmodelCreation_1_1Create__eFAST__Models}\index{model\+Creation.\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation.\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}}
+
+
+Create simulation parameter files for efast analysis.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmodelCreation_1_1Create__eFAST__Models_a549686f2f796ff48ba454519f84fc799}{Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models} (String settings\+File)
+\item 
+void \hyperlink{classmodelCreation_1_1Create__eFAST__Models_a1908be9dc257cfcbee767d2062841dc7}{write\+E\+F\+A\+S\+T\+Parameter\+Files} (String efast\+Params\+For\+Runs\+File, String param\+File\+Output\+Directory)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{classmodelCreation_1_1Create__eFAST__Models_aa004bf022772ece1e489a4af00c26096}{sbml\+Compatible}
+\item 
+String \hyperlink{classmodelCreation_1_1Create__eFAST__Models_acf43f15ebfad126fdc7ce42a33c1b39d}{params\+Meta\+Data\+File\+Path}
+\item 
+String \hyperlink{classmodelCreation_1_1Create__eFAST__Models_a24e594a0a8434b90625f7ec3a130a65c}{param\+File\+Output\+Folder}
+\item 
+int \hyperlink{classmodelCreation_1_1Create__eFAST__Models_a4a82f490d79da6b61bb0de68cac3dafe}{efast\+Curves}
+\item 
+int \hyperlink{classmodelCreation_1_1Create__eFAST__Models_aadc25e3a9a65b291e9b81629909da925}{efast\+Curve\+Samples}
+\item 
+int \hyperlink{classmodelCreation_1_1Create__eFAST__Models_a7e4d5457ed8f69db260c0328e585fe96}{num\+E\+Fast\+Samples}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Create simulation parameter files for efast analysis. 
+
+Steps in this process\+: 1. Generate efast samples for a subset of simulation parameters using spartan (creates a file for each parameter) 2. Set the location of the folder containing these C\+S\+V files, the names of the parameters of interest, a location of a parameter file at which parameters are at calibrated values, the number of resample curves, and a location for the output files, in the main method below 3. Run this java program. A parameter file will be created for each sample set in the analysis, with parameters of interest at their values set by the spartan sample, and those not of interest set from their calibrated value
+
+\begin{DoxyAuthor}{Author}
+Kieran Alden, York Computational Immunology Lab 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+February 2015 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmodelCreation_1_1Create__eFAST__Models_a549686f2f796ff48ba454519f84fc799}{}\index{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}!Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}}
+\index{Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}!model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}}
+\subsubsection[{Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}]{\setlength{\rightskip}{0pt plus 5cm}model\+Creation.\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models.\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models (
+\begin{DoxyParamCaption}
+\item[{String}]{settings\+File}
+\end{DoxyParamCaption}
+)}\label{classmodelCreation_1_1Create__eFAST__Models_a549686f2f796ff48ba454519f84fc799}
+Program to create parameter files for efast experiments. Takes the spreadsheet generated in spartan and replaces the values of parameters of interest in a calibration parameter file with the perturbed values. Does this for all sample sets generated, for all parameters
+
+
+\begin{DoxyParams}{Parameters}
+{\em settings\+File} & Full path to the sensitivity analysis X\+M\+L settings file \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmodelCreation_1_1Create__eFAST__Models_a1908be9dc257cfcbee767d2062841dc7}{}\index{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}!write\+E\+F\+A\+S\+T\+Parameter\+Files@{write\+E\+F\+A\+S\+T\+Parameter\+Files}}
+\index{write\+E\+F\+A\+S\+T\+Parameter\+Files@{write\+E\+F\+A\+S\+T\+Parameter\+Files}!model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}}
+\subsubsection[{write\+E\+F\+A\+S\+T\+Parameter\+Files}]{\setlength{\rightskip}{0pt plus 5cm}void model\+Creation.\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models.\+write\+E\+F\+A\+S\+T\+Parameter\+Files (
+\begin{DoxyParamCaption}
+\item[{String}]{efast\+Params\+For\+Runs\+File, }
+\item[{String}]{param\+File\+Output\+Directory}
+\end{DoxyParamCaption}
+)}\label{classmodelCreation_1_1Create__eFAST__Models_a1908be9dc257cfcbee767d2062841dc7}
+Write the parameter files for each value set created by Spartan
+
+
+\begin{DoxyParams}{Parameters}
+{\em efast\+Params\+For\+Runs\+File} & The full path to the parameter values file created by spartan \\
+\hline
+{\em param\+File\+Output\+Directory} & The full path to where the generated parameter files should be stored \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodelCreation_1_1Create__eFAST__Models_a4a82f490d79da6b61bb0de68cac3dafe}{}\index{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}!efast\+Curves@{efast\+Curves}}
+\index{efast\+Curves@{efast\+Curves}!model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}}
+\subsubsection[{efast\+Curves}]{\setlength{\rightskip}{0pt plus 5cm}int model\+Creation.\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models.\+efast\+Curves}\label{classmodelCreation_1_1Create__eFAST__Models_a4a82f490d79da6b61bb0de68cac3dafe}
+Number of resample curves employed by the e\+F\+A\+S\+T algorithm \hypertarget{classmodelCreation_1_1Create__eFAST__Models_aadc25e3a9a65b291e9b81629909da925}{}\index{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}!efast\+Curve\+Samples@{efast\+Curve\+Samples}}
+\index{efast\+Curve\+Samples@{efast\+Curve\+Samples}!model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}}
+\subsubsection[{efast\+Curve\+Samples}]{\setlength{\rightskip}{0pt plus 5cm}int model\+Creation.\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models.\+efast\+Curve\+Samples}\label{classmodelCreation_1_1Create__eFAST__Models_aadc25e3a9a65b291e9b81629909da925}
+Number of samples taken from e\+F\+A\+S\+T Curve \hypertarget{classmodelCreation_1_1Create__eFAST__Models_a7e4d5457ed8f69db260c0328e585fe96}{}\index{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}!num\+E\+Fast\+Samples@{num\+E\+Fast\+Samples}}
+\index{num\+E\+Fast\+Samples@{num\+E\+Fast\+Samples}!model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}}
+\subsubsection[{num\+E\+Fast\+Samples}]{\setlength{\rightskip}{0pt plus 5cm}int model\+Creation.\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models.\+num\+E\+Fast\+Samples}\label{classmodelCreation_1_1Create__eFAST__Models_a7e4d5457ed8f69db260c0328e585fe96}
+Counter of samples produced by Spartan. Used in parameter file creation \hypertarget{classmodelCreation_1_1Create__eFAST__Models_a24e594a0a8434b90625f7ec3a130a65c}{}\index{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}!param\+File\+Output\+Folder@{param\+File\+Output\+Folder}}
+\index{param\+File\+Output\+Folder@{param\+File\+Output\+Folder}!model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}}
+\subsubsection[{param\+File\+Output\+Folder}]{\setlength{\rightskip}{0pt plus 5cm}String model\+Creation.\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models.\+param\+File\+Output\+Folder}\label{classmodelCreation_1_1Create__eFAST__Models_a24e594a0a8434b90625f7ec3a130a65c}
+Folder where you want adapted parameter files to be stored \hypertarget{classmodelCreation_1_1Create__eFAST__Models_acf43f15ebfad126fdc7ce42a33c1b39d}{}\index{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}!params\+Meta\+Data\+File\+Path@{params\+Meta\+Data\+File\+Path}}
+\index{params\+Meta\+Data\+File\+Path@{params\+Meta\+Data\+File\+Path}!model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}}
+\subsubsection[{params\+Meta\+Data\+File\+Path}]{\setlength{\rightskip}{0pt plus 5cm}String model\+Creation.\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models.\+params\+Meta\+Data\+File\+Path}\label{classmodelCreation_1_1Create__eFAST__Models_acf43f15ebfad126fdc7ce42a33c1b39d}
+The original, calibrated parameter file \hypertarget{classmodelCreation_1_1Create__eFAST__Models_aa004bf022772ece1e489a4af00c26096}{}\index{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}!sbml\+Compatible@{sbml\+Compatible}}
+\index{sbml\+Compatible@{sbml\+Compatible}!model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models@{model\+Creation\+::\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models}}
+\subsubsection[{sbml\+Compatible}]{\setlength{\rightskip}{0pt plus 5cm}boolean model\+Creation.\+Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models.\+sbml\+Compatible}\label{classmodelCreation_1_1Create__eFAST__Models_aa004bf022772ece1e489a4af00c26096}
+Whether we are creating Repast Compatible files\+: T\+O C\+O\+M\+E I\+N V\+E\+R\+S\+I\+O\+N 2 Whether we are creating S\+B\+M\+L files 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/model\+Creation/\hyperlink{Create__eFAST__Models_8java}{Create\+\_\+e\+F\+A\+S\+T\+\_\+\+Models.\+java}\end{DoxyCompactItemize}

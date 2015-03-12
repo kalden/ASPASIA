@@ -1,11 +1,15 @@
+/**
+ * \package spartanLink 
+ * \brief Runs the spartan sampling in R, without the need to do this externally
+ */
 package spartanLink;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
- * Generates an R compatible script for performing EFAST Sampling from the
- * information in the XML file
+ * \brief Generates the script to perform eFAST Parameter Sampling in Spartan
+ * 
  * 
  * @author Kieran Alden, York Computational Immunology Lab
  * @version 1.0

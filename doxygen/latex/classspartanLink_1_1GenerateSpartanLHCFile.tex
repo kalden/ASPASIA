@@ -1,0 +1,72 @@
+\hypertarget{classspartanLink_1_1GenerateSpartanLHCFile}{}\section{spartan\+Link.\+Generate\+Spartan\+L\+H\+C\+File Class Reference}
+\label{classspartanLink_1_1GenerateSpartanLHCFile}\index{spartan\+Link.\+Generate\+Spartan\+L\+H\+C\+File@{spartan\+Link.\+Generate\+Spartan\+L\+H\+C\+File}}
+
+
+Generates the script to perform Latin-\/\+Hypercube Parameter Sampling in Spartan.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classspartanLink_1_1GenerateSpartanLHCFile_a3d1d8765cb9332f9701b2dad2972ed3e}{Create\+Spartan\+L\+H\+C\+Script} (String output\+Path, Array\+List$<$ String $>$ parameters, int num\+Samples, Array\+List$<$ String $>$ min\+Vals, Array\+List$<$ String $>$ max\+Vals, String algorithm)
+\item 
+static void \hyperlink{classspartanLink_1_1GenerateSpartanLHCFile_a2395fe41bd10ffffb98dd861d54b6873}{main} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generates the script to perform Latin-\/\+Hypercube Parameter Sampling in Spartan. 
+
+\begin{DoxyAuthor}{Author}
+Kieran Alden, York Computational Immunology Lab 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+February 2015 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classspartanLink_1_1GenerateSpartanLHCFile_a3d1d8765cb9332f9701b2dad2972ed3e}{}\index{spartan\+Link\+::\+Generate\+Spartan\+L\+H\+C\+File@{spartan\+Link\+::\+Generate\+Spartan\+L\+H\+C\+File}!Create\+Spartan\+L\+H\+C\+Script@{Create\+Spartan\+L\+H\+C\+Script}}
+\index{Create\+Spartan\+L\+H\+C\+Script@{Create\+Spartan\+L\+H\+C\+Script}!spartan\+Link\+::\+Generate\+Spartan\+L\+H\+C\+File@{spartan\+Link\+::\+Generate\+Spartan\+L\+H\+C\+File}}
+\subsubsection[{Create\+Spartan\+L\+H\+C\+Script}]{\setlength{\rightskip}{0pt plus 5cm}static void spartan\+Link.\+Generate\+Spartan\+L\+H\+C\+File.\+Create\+Spartan\+L\+H\+C\+Script (
+\begin{DoxyParamCaption}
+\item[{String}]{output\+Path, }
+\item[{Array\+List$<$ String $>$}]{parameters, }
+\item[{int}]{num\+Samples, }
+\item[{Array\+List$<$ String $>$}]{min\+Vals, }
+\item[{Array\+List$<$ String $>$}]{max\+Vals, }
+\item[{String}]{algorithm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classspartanLink_1_1GenerateSpartanLHCFile_a3d1d8765cb9332f9701b2dad2972ed3e}
+Takes the information from the X\+M\+L settings file and creates an R script that performs L\+H\+C sampling for the specified parameters
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+Path} & Where the parameter sample C\+S\+V file spartan produces should be stored \\
+\hline
+{\em parameters} & Array\+List of parameters from the X\+M\+L file, for which values will be created \\
+\hline
+{\em num\+Samples} & The number of L\+H\+C samples to perform \\
+\hline
+{\em min\+Vals} & Array\+List of the minimum values of each parameter \\
+\hline
+{\em max\+Vals} & Array\+List of the maximum values of each parameter \\
+\hline
+{\em algorithm} & L\+H\+C algorithm to use -\/ can be normal or optimal \\
+\hline
+\end{DoxyParams}
+\hypertarget{classspartanLink_1_1GenerateSpartanLHCFile_a2395fe41bd10ffffb98dd861d54b6873}{}\index{spartan\+Link\+::\+Generate\+Spartan\+L\+H\+C\+File@{spartan\+Link\+::\+Generate\+Spartan\+L\+H\+C\+File}!main@{main}}
+\index{main@{main}!spartan\+Link\+::\+Generate\+Spartan\+L\+H\+C\+File@{spartan\+Link\+::\+Generate\+Spartan\+L\+H\+C\+File}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void spartan\+Link.\+Generate\+Spartan\+L\+H\+C\+File.\+main (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classspartanLink_1_1GenerateSpartanLHCFile_a2395fe41bd10ffffb98dd861d54b6873}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/spartan\+Link/\hyperlink{GenerateSpartanLHCFile_8java}{Generate\+Spartan\+L\+H\+C\+File.\+java}\end{DoxyCompactItemize}
