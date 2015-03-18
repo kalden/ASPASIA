@@ -99,95 +99,113 @@ public class Create_eFAST_Models
 	this.paramsMetaDataFilePath = XMLFileUtilities.getParam("pathToSimulationParameterFile");
 
 	// Folder where you want adapted parameter files to be stored
-	this.paramFileOutputFolder = XMLFileUtilities.getParam("parameterFileOutputFolder")
-	        + "/eFAST/";
-	// Make that folder
-	new File(this.paramFileOutputFolder).mkdirs();
+	String paramFileOutputFolderReadIn = XMLFileUtilities.getParam("parameterFileOutputFolder");
 
 	// Number of curves in the analysis
-	this.efastCurves = Integer.parseInt(XMLFileUtilities.getParam("efastCurves"));
+	String efastCurveReadIn = XMLFileUtilities.getParam("efastCurves");
+	String efastCurveSamplesReadIn = XMLFileUtilities.getParam("efastCurveSamples");
 
-	// Number of samples to take from each curve
-	this.efastCurveSamples = Integer.parseInt(XMLFileUtilities.getParam("efastCurveSamples"));
-
-	// Now to read in the information about parameters being analysed
-	XMLFileUtilities.readParameterInfo("eFAST");
-
-	// Add the dummy, as this is needed in eFAST
-	XMLFileUtilities.parametersAnalysed.add("dummy");
-	XMLFileUtilities.parameterType.add("double");
-	XMLFileUtilities.minVals.add("1");
-	XMLFileUtilities.maxVals.add("10");
-
-	// Generate the Spartan EFAST Sampling File
-	GenerateSpartanEFASTFile.CreateSpartanLHCScript(this.paramFileOutputFolder,
-	        XMLFileUtilities.parametersAnalysed, this.efastCurves, this.efastCurveSamples,
-	        XMLFileUtilities.minVals, XMLFileUtilities.maxVals);
-
-	// set the path to the generated spartan file specifying the parameter
-	// sampling
-	// SpartanUtilities.spartanScript =
-	// XMLFileUtilities.getParam("efast_spartan_script");
-	SpartanUtilities.spartanScript = this.paramFileOutputFolder + "/EFAST_Sampling.R";
-
-	// Generate the sample in R
-	int runResult = SpartanUtilities.generateParameterSamples();
-
-	// If sample went well, create the parameter files and cluster scripts
-	if (runResult == 0)
+	if (this.paramsMetaDataFilePath == null || paramFileOutputFolderReadIn == null
+	        || efastCurveReadIn == null || efastCurveSamplesReadIn == null)
 	{
-
-	    for (int c = 1; c <= this.efastCurves; c++)
-	    {
-		// Make a directory to store the parameter files for this curve
-		new File(this.paramFileOutputFolder + "/" + c).mkdirs();
-
-		// Now create files for each parameter - reading in the spartan
-		// generated efast file
-		Iterator<String> params = XMLFileUtilities.parametersAnalysed.iterator();
-
-		while (params.hasNext())
-		{
-		    // Store the param name - useful for naming output file
-		    // later
-		    String parameterName = params.next();
-		    // Create the name of the spartan parameter file
-		    String efastParamsForRunsFile = this.paramFileOutputFolder + "/Curve" + c + "_"
-			    + parameterName + ".csv";
-
-		    // Make a directory for these parameter files
-		    String outputDir = this.paramFileOutputFolder + "/" + c + "/" + parameterName;
-		    new File(outputDir).mkdirs();
-
-		    // Now make the parameter files for this parameter, for this
-		    // curve
-		    this.writeEFASTParameterFiles(efastParamsForRunsFile, outputDir);
-
-		}
-	    }
-
-	    // STUB FOR VERSION 2
-	    // Now if Repast, we're going to copy the model files and change the
-	    // file sink file to
-	    // the correct output directory
-	    /*
-	     * if (this.repastCompatible) { // Null as no map of parameter file
-	     * counts, as with robustness // analysis
-	     * Setup_Repast_Experiment_Files sref = new
-	     * Setup_Repast_Experiment_Files( this.paramFileOutputFolder,
-	     * "eFAST", null); }
-	     */
-
-	    System.out.println("eFAST SBML Model Files Generated");
-	    System.out.println("Check the Directory " + this.paramFileOutputFolder
-		    + " for the Files");
+	    System.out.println("Error in Settings File. Address these and run ASPASIA again");
 	}
 	else
 	{
-	    System.out
-		    .println("There was a problem creating parameter samples with Spartan. Check your settings file for errors declaring the parameter information");
-	}
 
+	    this.paramFileOutputFolder = paramFileOutputFolderReadIn + "/eFAST/";
+	    this.efastCurves = Integer.parseInt(efastCurveReadIn);
+	    // Number of samples to take from each curve
+	    this.efastCurveSamples = Integer.parseInt(efastCurveSamplesReadIn);
+
+	    // Make output folder
+	    new File(this.paramFileOutputFolder).mkdirs();
+
+	    // Now to read in the information about parameters being analysed
+	    XMLFileUtilities.readParameterInfo("eFAST");
+
+	    // Add the dummy, as this is needed in eFAST
+	    XMLFileUtilities.parametersAnalysed.add("dummy");
+	    XMLFileUtilities.parameterType.add("double");
+	    XMLFileUtilities.minVals.add("1");
+	    XMLFileUtilities.maxVals.add("10");
+
+	    // Generate the Spartan EFAST Sampling File
+	    GenerateSpartanEFASTFile.CreateSpartanLHCScript(this.paramFileOutputFolder,
+		    XMLFileUtilities.parametersAnalysed, this.efastCurves, this.efastCurveSamples,
+		    XMLFileUtilities.minVals, XMLFileUtilities.maxVals);
+
+	    // set the path to the generated spartan file specifying the
+	    // parameter
+	    // sampling
+	    // SpartanUtilities.spartanScript =
+	    // XMLFileUtilities.getParam("efast_spartan_script");
+	    SpartanUtilities.spartanScript = this.paramFileOutputFolder + "/EFAST_Sampling.R";
+
+	    // Generate the sample in R
+	    int runResult = SpartanUtilities.generateParameterSamples();
+
+	    // If sample went well, create the parameter files and cluster
+	    // scripts
+	    if (runResult == 0)
+	    {
+
+		for (int c = 1; c <= this.efastCurves; c++)
+		{
+		    // Make a directory to store the parameter files for this
+		    // curve
+		    new File(this.paramFileOutputFolder + "/" + c).mkdirs();
+
+		    // Now create files for each parameter - reading in the
+		    // spartan
+		    // generated efast file
+		    Iterator<String> params = XMLFileUtilities.parametersAnalysed.iterator();
+
+		    while (params.hasNext())
+		    {
+			// Store the param name - useful for naming output file
+			// later
+			String parameterName = params.next();
+			// Create the name of the spartan parameter file
+			String efastParamsForRunsFile = this.paramFileOutputFolder + "/Curve" + c
+			        + "_" + parameterName + ".csv";
+
+			// Make a directory for these parameter files
+			String outputDir = this.paramFileOutputFolder + "/" + c + "/"
+			        + parameterName;
+			new File(outputDir).mkdirs();
+
+			// Now make the parameter files for this parameter, for
+			// this
+			// curve
+			this.writeEFASTParameterFiles(efastParamsForRunsFile, outputDir);
+
+		    }
+		}
+
+		// STUB FOR VERSION 2
+		// Now if Repast, we're going to copy the model files and change
+		// the
+		// file sink file to
+		// the correct output directory
+		/*
+	         * if (this.repastCompatible) { // Null as no map of parameter
+	         * file counts, as with robustness // analysis
+	         * Setup_Repast_Experiment_Files sref = new
+	         * Setup_Repast_Experiment_Files( this.paramFileOutputFolder,
+	         * "eFAST", null); }
+	         */
+
+		System.out.println("eFAST SBML Model Files Generated");
+		System.out.println("Check the Directory " + this.paramFileOutputFolder
+		        + " for the Files");
+	    }
+	    else
+	    {
+		System.out
+		        .println("There was a problem creating parameter samples with Spartan. Check your settings file for errors declaring the parameter information");
+	    }
+	}
     }
 
     /**

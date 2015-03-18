@@ -70,8 +70,6 @@ public class SBMLFileFromSolverOutput
 
 	// Folder where you want adapted parameter files to be stored
 	this.paramFileOutputFolder = XMLFileUtilities.getParam("parameterFileOutputFolder");
-	// Make that folder
-	new File(this.paramFileOutputFolder).mkdirs();
 
 	// Get the file name for the new parameter file
 	this.newParamFileName = XMLFileUtilities.getParam("newParamFileName");
@@ -79,17 +77,30 @@ public class SBMLFileFromSolverOutput
 	// The original, calibrated parameter file
 	this.paramsMetaDataFilePath = XMLFileUtilities.getParam("pathToSimulationParameterFile");
 
-	// Some of the species and parameter values will come from the the
-	// results file, whereas others
-	// will be in the settings file. Thus we need to read in the parameter
-	// info from the file
-	XMLFileUtilities.readParameterInfo("SBMLMod");
+	if (this.sbmlRunResultsFile == null || this.paramFileOutputFolder == null
+	        || this.newParamFileName == null || this.paramsMetaDataFilePath == null)
+	{
+	    System.out.println("Error in Settings File. Address these and run ASPASIA again");
+	}
+	else
+	{
 
-	this.newModelFromSteadyState();
+	    // Make output folder
+	    new File(this.paramFileOutputFolder).mkdirs();
 
-	System.out.println("New SBML Model File Created");
-	System.out.println("Check " + this.paramFileOutputFolder + " for new file "
-	        + this.newParamFileName);
+	    // Some of the species and parameter values will come from the the
+	    // results file, whereas others
+	    // will be in the settings file. Thus we need to read in the
+	    // parameter
+	    // info from the file
+	    XMLFileUtilities.readParameterInfo("SBMLMod");
+
+	    this.newModelFromSteadyState();
+
+	    System.out.println("New SBML Model File Created");
+	    System.out.println("Check " + this.paramFileOutputFolder + " for new file "
+		    + this.newParamFileName);
+	}
     }
 
     /**

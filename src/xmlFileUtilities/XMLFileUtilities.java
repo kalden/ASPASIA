@@ -126,7 +126,15 @@ public class XMLFileUtilities
      */
     public static String getParam(String paramName)
     {
-	return xmlDocRoot.getChildText(paramName);
+	String value = xmlDocRoot.getChildText(paramName);
+	if (value == null)
+	{
+	    if (paramName != "lhcPreGeneratedSampleFile")
+	    {
+		System.out.println("No Value Entered for " + paramName + " In Settings File");
+	    }
+	}
+	return value;
     }
 
     /**

@@ -41,7 +41,17 @@ public class GenerateSpartanEFASTFile
 	    writer.println("library(spartan)");
 
 	    // Write the filepath
-	    writer.println("FILEPATH<-\"" + outputPath + "\"");
+	    String OS = System.getProperty("os.name").toLowerCase();
+	    if (OS.indexOf("win") >= 0)
+	    {
+		String winOutputPath = outputPath.replace("\\", "/");
+		writer.println("FILEPATH<-\"" + winOutputPath + "\"");
+	    }
+	    else
+	    {
+		// Not Windows
+		writer.println("FILEPATH<-\"" + outputPath + "\"");
+	    }
 
 	    writer.println("NUMCURVES<-" + numCurves);
 	    writer.println("NUMSAMPLES<-" + numSamples);

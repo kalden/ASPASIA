@@ -86,58 +86,69 @@ public class Create_Robustness_Models
 	this.paramsMetaDataFilePath = XMLFileUtilities.getParam("pathToSimulationParameterFile");
 
 	// Folder where you want adapted parameter files to be stored
-	this.paramFileOutputFolder = XMLFileUtilities.getParam("parameterFileOutputFolder")
-	        + "/Robustness/";
-	// Make that folder
-	new File(this.paramFileOutputFolder).mkdirs();
+	String paramFileOutputFolderReadIn = XMLFileUtilities.getParam("parameterFileOutputFolder");
 
-	// Now to read in the information about parameters being analysed
-	boolean paramCheckedOk = XMLFileUtilities.readParameterInfo("OAT");
-
-	if (paramCheckedOk)
+	if (this.paramsMetaDataFilePath == null || paramFileOutputFolderReadIn == null)
 	{
-	    // Generate the Spartan File
-	    GenerateSpartanOATFile.CreateSpartanLHCScript(this.paramFileOutputFolder,
-		    XMLFileUtilities.parametersAnalysed, XMLFileUtilities.minVals,
-		    XMLFileUtilities.maxVals, XMLFileUtilities.baselineVals,
-		    XMLFileUtilities.incVals);
+	    System.out.println("Error in Settings File. Address these and run ASPASIA again");
+	}
+	else
+	{
 
-	    // set the path to the generated spartan file specifying the
-	    // parameter sampling
-	    SpartanUtilities.spartanScript = this.paramFileOutputFolder + "OAT_Sampling.R";
+	    this.paramFileOutputFolder = paramFileOutputFolderReadIn + "/Robustness/";
+	    // Make that folder
+	    new File(this.paramFileOutputFolder).mkdirs();
 
-	    // Generate the sample in R
-	    int runResult = SpartanUtilities.generateParameterSamples();
+	    // Now to read in the information about parameters being analysed
+	    boolean paramCheckedOk = XMLFileUtilities.readParameterInfo("OAT");
 
-	    if (runResult == 0)
+	    if (paramCheckedOk)
 	    {
-		// Create the simulation parameter files
-		this.writeOATParameterFiles();
+		// Generate the Spartan File
+		GenerateSpartanOATFile.CreateSpartanLHCScript(this.paramFileOutputFolder,
+		        XMLFileUtilities.parametersAnalysed, XMLFileUtilities.minVals,
+		        XMLFileUtilities.maxVals, XMLFileUtilities.baselineVals,
+		        XMLFileUtilities.incVals);
 
-		// STUB FOR VERSION 2: REPAST COMPATIBLE ASPASIA
-		// Now if Repast, we're going to copy the model files and change
-		// the file sink file to the correct output directory
-		/*
-	         * if (this.repastCompatible) { Setup_Repast_Experiment_Files
-	         * sref = new Setup_Repast_Experiment_Files(
-	         * this.paramFileOutputFolder, "OAT", this.parameterFilesCount);
-	         * }
-	         */
+		// set the path to the generated spartan file specifying the
+		// parameter sampling
+		SpartanUtilities.spartanScript = this.paramFileOutputFolder + "OAT_Sampling.R";
 
-		System.out.println("Robustness Analysis SBML Model Files Generated");
-		System.out.println("Check the directory " + this.paramFileOutputFolder
-		        + " for the SBML Output Files");
+		// Generate the sample in R
+		int runResult = SpartanUtilities.generateParameterSamples();
+
+		if (runResult == 0)
+		{
+		    // Create the simulation parameter files
+		    this.writeOATParameterFiles();
+
+		    // STUB FOR VERSION 2: REPAST COMPATIBLE ASPASIA
+		    // Now if Repast, we're going to copy the model files and
+		    // change
+		    // the file sink file to the correct output directory
+		    /*
+	             * if (this.repastCompatible) {
+	             * Setup_Repast_Experiment_Files sref = new
+	             * Setup_Repast_Experiment_Files(
+	             * this.paramFileOutputFolder, "OAT",
+	             * this.parameterFilesCount); }
+	             */
+
+		    System.out.println("Robustness Analysis SBML Model Files Generated");
+		    System.out.println("Check the directory " + this.paramFileOutputFolder
+			    + " for the SBML Output Files");
+		}
+		else
+		{
+		    System.out
+			    .println("There was a problem creating parameter samples with Spartan. Check your settings file for errors declaring the parameter information");
+		}
 	    }
 	    else
 	    {
 		System.out
-		        .println("There was a problem creating parameter samples with Spartan. Check your settings file for errors declaring the parameter information");
+		        .println("There is a problem in the ASPASIA settings file. Check the declaration of your parameter and species information is correct");
 	    }
-	}
-	else
-	{
-	    System.out
-		    .println("There is a problem in the ASPASIA settings file. Check the declaration of your parameter and species information is correct");
 	}
     }
 
